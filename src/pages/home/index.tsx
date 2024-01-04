@@ -8,7 +8,7 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const response = await axios.create({ baseURL: "/" }).get("/product");
-
+        console.log(response.config.url );
         console.log(response);
         const responseData = response.data;
         setData(responseData);
