@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-}
+  skipTrailingSlashRedirect: true,
+  reactStrictMode: false,
+  swcMinify: true,
+  env: {
+    basePath: "/",
+    NEXTAUTH_URL: `${process.env.NEXTAUTH_URL}`,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
