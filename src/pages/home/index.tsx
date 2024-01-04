@@ -7,9 +7,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_LINK}/api/product`
-        );
+        const response = await axios.create({ baseURL: "/" }).get("/product");
 
         console.log(response);
         const responseData = response.data;

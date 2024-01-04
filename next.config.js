@@ -4,8 +4,15 @@ const nextConfig = {
   reactStrictMode: false,
   swcMinify: true,
   env: {
-    basePath: "/",
-    NEXTAUTH_URL: `${process.env.NEXTAUTH_URL}`,
+    basePath: "",
+  },
+  rewrites: async () => {
+    return [
+      {
+        source: "/:path*",
+        destination: `${process.env.NEXT_PUBLIC_API_LINK}/api/:path*`,
+      },
+    ];
   },
 };
 
